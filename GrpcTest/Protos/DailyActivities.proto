@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+// User services
+service UserGrpc {
+ 
+  rpc ListUsers (ListUsersRequest) returns (ListUserResponse);
+}
+
+message ListUsersRequest {
+  string name = 1;
+}
+
+message ListUserResponse {
+  string message = 1;
+}
+
+// Activity services
+
+service ActivityGrpc {
+ 
+  rpc SaveActivity (SaveActivityRequest) returns (SaveActivityResponse);
+  rpc ListActivity (ListActivityRequest) returns (ListActivityResponse);
+}
+
+message SaveActivityRequest {
+  string name = 1;
+}
+
+message SaveActivityResponse {
+  string message = 1;
+}
+
+message ListActivityRequest{
+	 string name = 1;
+}
+message ListActivityResponse {
+	 string name = 1;
+}

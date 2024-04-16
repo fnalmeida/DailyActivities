@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+// User services
+service CaloriesGrpc {
+ 
+  rpc ListCalories (User) returns (Calories);
+
+}
+
+message Empty
+{}
+
+message UserIn 
+{
+	string UserID 
+	DateTime startDate;
+	DateTime endDate;
+}
+
+message CaloriesOut {
+
+ 	IEnumarable<Calorie> calories;
+
+}
+
+public record Calorie
+{
+	string id;
+	string firstName;
+	string lastName;
+	decimal calories;
+	DateTime executionDate;
+}
