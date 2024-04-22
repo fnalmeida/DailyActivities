@@ -1,10 +1,13 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿
 using Grpc.Net.Client;
+using GrpcService1;
 
-Console.WriteLine("Hello, World!");
-using var channel = GrpcChannel.ForAddress("https://localhost:7119");
-var client = new UserGrpc.UserGrpcClient(channel);
-var reply =  client.ListUsers(null, null);
+using var channel = GrpcChannel.ForAddress("https://localhost:7116");
+var client = new Greeter.GreeterClient(channel);
+
+var reply = await client.SayHelloAsync(new HelloRequest { Name = "fabricio" });
 Console.WriteLine("Greeting: " + reply.Message);
+
+Console.WriteLine("Shutting down");
 Console.WriteLine("Press any key to exit...");
 Console.ReadKey();

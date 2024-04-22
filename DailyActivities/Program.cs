@@ -38,7 +38,7 @@ builder.Services.AddScoped<MongoDBGenericDAO>(dao => new MongoDBGenericDAO(conne
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || app.Environment.IsStaging())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
@@ -46,9 +46,8 @@ if (app.Environment.IsDevelopment())
  
 app.UseHttpsRedirection();
 
+#region user endpoints
 
-
-#region user
 app.MapGet("/user", async (MongoDBGenericDAO mongoDAO) =>
 {
     return mongoDAO.Find<User>("user", new BsonDocument("_", true));
@@ -135,6 +134,7 @@ app.MapDelete("/user/softdelete/{id}", async (MongoDBGenericDAO mongoDB, string 
 .WithOpenApi();
 #endregion
 
+#region activity endpoints
 
 app.MapPost("/activity", async (MongoDBGenericDAO mongoDAO, Activity act) =>
 {
@@ -183,7 +183,7 @@ try
 .WithTags("mongoDB")
 .WithOpenApi();
 
-
+#endregion
 
 app.Run();
 

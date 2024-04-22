@@ -1,6 +1,6 @@
 using DA_Domain.Models;
 using DA_Domain.Services;
-using DA_GrpcService.Services;
+using DA_GrpcService;
 using DailyActivities.Data;
 using DailyActivities.Models;
 using Microsoft.AspNetCore.Connections;

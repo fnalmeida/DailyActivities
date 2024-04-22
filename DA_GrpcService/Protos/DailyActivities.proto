@@ -1,33 +1,47 @@
 syntax = "proto3";
 
+import "google/protobuf/timestamp.proto";
+package custom_type.v1;
+
+option csharp_namespace = "DA_GrpcService";
+
+
 // User services
 service CaloriesGrpc {
  
-  rpc ListCalories (User) returns (Calories);
+  rpc ListCalories (Empty) returns (CaloriesOut);
 
 }
 
 message Empty
 {}
 
-message UserIn 
+message CaloriesIn 
 {
-	string UserID 
-	DateTime startDate;
-	DateTime endDate;
+	string UserID = 1;
+	google.protobuf.Timestamp startDate = 2;
+	google.protobuf.Timestamp endDate = 3;
 }
 
 message CaloriesOut {
 
- 	IEnumarable<Calorie> calories;
-
+ 	repeated EnergySpentOutType energySpents = 1;
 }
 
-public record Calorie
-{
-	string id;
-	string firstName;
-	string lastName;
-	decimal calories;
-	DateTime executionDate;
+
+message DecimalValue {
+    int64 units = 1;
+    sfixed32 nanos = 2;
 }
+
+message EnergySpentOutType {
+	
+    string Id = 1 ;
+    string UserId = 2;
+    string FirstName = 3;
+    string LastName = 4;
+    DecimalValue Calorie = 5;
+    google.protobuf.Timestamp ExecutionDate = 6;
+}
+
+

@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireSample.ServiceDefault
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireSample.Web", "AspireSample\AspireSample.Web\AspireSample.Web.csproj", "{71EA1FED-2B0A-4AA4-AD4D-97F13A683132}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{52B5895D-199B-4DA8-8EB5-CA0BAB041CD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{52B5895D-199B-4DA8-8EB5-CA0BAB041CD7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Domain", "2-Domain", "{9A02DFF8-DD3F-4575-A73F-D65A53D12085}"
 EndProject
@@ -28,6 +28,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Infra", "3-Infra", "{A84B9BFD-515D-4852-AB47-A9487558EB47}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0-Aspire", "0-Aspire", "{688A9B79-8721-4F0C-91D3-DFF95E0EEC21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcService1", "GrpcService1\GrpcService1.csproj", "{D52E6BA7-3510-4B89-BC2A-C615C8518AE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,10 @@ Global
 		{52B5895D-199B-4DA8-8EB5-CA0BAB041CD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52B5895D-199B-4DA8-8EB5-CA0BAB041CD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52B5895D-199B-4DA8-8EB5-CA0BAB041CD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D52E6BA7-3510-4B89-BC2A-C615C8518AE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D52E6BA7-3510-4B89-BC2A-C615C8518AE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D52E6BA7-3510-4B89-BC2A-C615C8518AE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D52E6BA7-3510-4B89-BC2A-C615C8518AE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
